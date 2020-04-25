@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./alfont/iconfont.css">
+    <style>
+
+        /* 
+        字体相关的样式:
+            color 颜色
+            font-size 大小
+                单位: 
+                px 像素
+                em 当前元素的一个font-size
+                rem 根元素的一个font-size
+            font-family 字体族
+                可选值: 
+                    serif 衬线字体
+                    sans-serif 非衬线字体
+                    monospace 等宽字体
+                    可以同时指定多个字体,优先用第一个,没有时用后面的
+            @font-face 可以将服务器中的字体提供给用户
+                font-family 指定传递后字体的名字
+                src: url('字体路径')
+            */
+        @font-face {
+            font-family: ;
+            src: url();
+        }
+        p{
+            color: red;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* 
+        图标字体(iconfont)
+             ①.可以将下载好的图标用于网页,注意版权
+            fontawesome 使用步骤
+                1.下载 https://https://fontawesome.com/
+                2.解压后将css,webfonts移动到项目中
+                3.使用图标字体
+                    <head>中引入<link>
+                        <link rel="stylesheet" href="./css/all.css">
+                    直接通过类名来使用图标字体
+                        class='fas fa-bell'    
+                        class='fab '
+            ②.通过伪元素设置图标字体
+                1.找到要设置图标的元素通过beforeak或after选中
+                2.在content中设置字体的编码
+                3.设置字体样式
+                    a. fab
+                    font-family:'font awesome 5 brands'
+                    b. fas
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900; 
+        
+        
+        */
+        /* 
+        阿里巴巴矢量图标字体
+            ①. https://www.iconfont.cn/
+            ②.选中想用的图标放入购物车,新建项目,下载至本地
+            ③.打开demo_index.html
+            ④.说明中有三种方式引用.
+        */
+        /* 
+        行高(line height)
+            文字占有的实际高度,默认是字体高度的1.333倍
+            line-height
+                值为px,em,或一个整数.如果是整数这是字体倍数
+        */
+        /*
+        font 可以设置字体的相关所有属性
+            语法: 
+            font: 加粗 斜体 字体大小/行高 字体族
+            font: bold italic 50px/2 'Courier New', Courier, monospace;
+                        行高可以不写,如果不写使用默认值
+            font-weight:bold;  字体加粗
+            font-style: italic; 斜体       
+        */
+        /* 
+        text-align 文本的水平对齐
+            可选值:
+                left
+                right
+                center 居中对齐
+                justify 两端对齐
+        */
+        /* 
+        vertical-align 设置元素垂直对齐方式(子元素相对父元素)
+                可选值: (可以直接给定值)
+                    baseline 默认值,基线对齐
+                    top
+                    bottom
+                    middle 居中对齐
+       */
+       /* 
+       text-decoration 设置文本修饰
+                可选值: (也可同时设置颜色)
+                    none
+                    underline 下划线
+                    line-through 删除线
+                    overline 上划线
+       */
+       /* 
+       white-space 设置网页如何处理空白
+                可选值: 
+                    normal
+                    nowrap 不换行
+                    pre 保留空白(按照你输入的格式排列,所见即所得)
+        如果一个长文本要设置在一个固定宽度的元素内只显示块元素宽度的那部分后面加...
+        width:200px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+                
+        */
+
+
+
+
+        i{
+            color: teal;
+            font-size: 200px;
+        }
+        li{
+            list-style: none;  /* 去除li元素前面的点 */
+            line-height: 2;
+            width: 500px;
+            border: 1px red solid;
+            text-align: center;
+            text-decoration: underline;
+
+        }
+        li::before{
+            content: '\f1b0';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: blue;
+            margin-right: 20px ;
+            
+         }
+         span{
+             font-size: 30px;
+             color: cornflowerblue;
+         }
+
+        i.iconfont{
+             font-size: 40px;
+             color: coral;
+         }
+        .box1{
+            width:200px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+
+
+
+         }
+         
+
+    </style>
+</head>
+<body>
+
+
+    <p>念去去千里烟波,幕蔼沉沉楚天阔
+        how do you do.
+    </p>
+    <i class="fab fa-adversal"></i>
+    <i class="fas fa-bell"></i>
+    <ul>
+        <li>念去去千里烟波</li>
+        <li>幕蔼沉沉楚天阔</li>
+        <li>多情自古伤离别</li>
+        <li>更哪堪冷落清秋节</li>
+    </ul>
+
+
+<!-- 
+    ③. 直接class="fas fa-bell" 
+        还有一种通过实体来写 &#xf0f3;  &#x图标编码;
+ -->
+    
+    <span class="fas fa-bell"></span>
+    <span class="fas fa-cat"></span>
+    <span class="fas">&#xf0f3;</span>
+
+
+    <i class="iconfont">&#xe633;</i>
+    <i class="iconfont">&#xe634;</i>
+    <i class="iconfont">&#xe635;</i>
+    <i class="iconfont">&#xe636;</i>
+    <i class="iconfont">&#xe637;</i>
+    <i class="iconfont">&#xe638;</i>
+
+    <div class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, corrupti ipsam officia officiis aperiam harum sapiente consequatur reiciendis cupiditate voluptas labore tempore perferendis obcaecati, non eligendi optio blanditiis, tempora unde!</div>
+    
+</body>
+</html>

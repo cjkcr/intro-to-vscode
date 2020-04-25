@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        1.内容区(content) 元素中所有的子元素和文本都在这里排列
+            大小由wight和height二个属性设置
+        2.边框(border) 边框大小影响整个盒子的大小
+            border-width 边框宽度 默认3px 4个边可以不一样上右下左的顺序
+            border-xxx-wight xxx可以是 top right bottom left
+                4个值 上右下左
+                3个值 上 左右 下
+                2个值 上下 左右
+
+            border-color 边框颜色 可以指定4个边,规则同上
+            border-style 边框样式 默认值None
+                solid 表示实线
+                dotted 点状虚线
+                dashed 虚线
+                double 双线
+            border简定属性,可以同时设置边框所有相关样式,且没有顺序要求
+            除了简定之外,还有4个方向的border-xxx xxx可以是 top right bottom left
+        3.内边距(padding) 内容区和边框之间的距离
+            四个方向
+            padding-top
+            padding-right
+            padding-bottom
+            padding-left
+            背景颜色会延伸到内边距上
+            可见框的大小,由内容共,内边距,边框共同决定,是三者的和.
+        4.外边距(margin)
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+            可以设置为负值,向反方向移动
+         */
+        .box1{width: 200px; 
+        height: 200px; 
+        background-color: darkgrey; 
+        border-width: 10px 10px 10px 10px;
+        border-color: aqua; 
+        border-style: solid;
+        margin-bottom: 20px;
+        margin-top: 10px;}
+        .box2{width: 200px; 
+        height: 200px; 
+        background-color: darkgrey;
+        border:solid 10px red;
+        padding: 10px 50px 25px 10px;
+        margin: 10px 50px 20px 400px;
+        }
+        .box1{padding-top: 5px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px;}
+        .inner{width: 100%; 
+        height: 100%; 
+        background-color: blueviolet;}
+        /* 
+        5.元素小平方向的布局:
+            由以下几个属性共同决定
+            margin-left
+            border-left
+            padding-left
+            wight
+            padding-right
+            border-right
+            margin-right
+            一个元素在其父元素中,小平布局必须要满足以上各值的和等于其父元素的内容区宽度
+            调整情况:(如7个属性值和不等于其父元素内容共宽度)
+            ①.wight,margin-left,margin-right这三个值可以设置为auto
+            ②.如没有设置auto,则浏览器自动调整margin-right
+            ③.如有设置auto,则浏览器调整值为auto的属性值,使其相等
+            ④.默认性况下wight的值为auto
+            ⑤.如果margin-left,margin-right这二个值可以设置为auto,则该元素在其父元素水平居中
+                例: wight:xxxpx;
+                    margin:0 auto;
+        6.垂直外边距的重叠(折叠)
+            相邻的垂直方向外边距会发生垂叠现象
+            ①.兄弟元素
+                兄弟元素间的相邻垂直外边距会取两者的较大值(两者都是正值)
+                特殊情况:
+                    如果相邻的外边距一正一负,则取两者的和
+                    如果相邻的外过距都是负值,则取两者中绝对值较大的
+            ②.父子元素
+                父子元素间相邻外边距,子元素的会传递给父元素(上边外距)
+                
+         */
+        .box3{
+            width: 800px;
+            height: 200px;
+            background-color: yellowgreen ;
+            }
+        .inner1{
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            margin-left: 100px;
+            /* margin: 0 auto; */
+        }
+        .inner2{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+
+        }
+        /*
+        6.元素垂直方向布局:
+            ①.默认情况下父元素的内容被子元素的内容撑开
+            ②.子元素在父元素的内容中排列,如果子元素的大小超过了父元素,则溢出
+            ③.使用overflow属性来设置溢出
+                可选值: 
+                    visible 默认值,溢出显示
+                    hidden 溢出内容不显示
+                    scroll 生成二个方向的滚动条
+                    auto 根据内容生成滚动条
+                overflow-x: 
+                overflow-y: 
+         */
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            overflow:scroll;
+        }
+        /* 
+        7.盒子大小的二种计算方式:
+            box-sizing属性 设置盒子尺寸方式(设置wight和height的作用)
+                可选值:
+                    content-box 默认值,content内容区大小由wight和height设置
+                    border-box 盒子的大小由wight和height设置
+        
+        
+        
+         */
+    </style>
+
+</head>
+<body>
+    <!-- 
+        盒模型 盒子模型 框模型(box mode)
+        css将页面中的所有元素都设置为了一个矩型的盒子
+        每一个盒子都由以下几个部分组成;
+            内容区(content)
+            内边矩(padding)
+            边框(border)
+            外边矩(margin)
+
+     -->
+     
+    <div class="box1">
+        <div class="inner"></div>
+    </div>
+    <div class="box2"></div>
+    <div class="box3">
+        <span class="inner2"></span>
+        <div class="inner1"></div>
+    </div>
+    <div class="box4">
+        <div class="inner4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione rem sint voluptates similique consequuntur quas eaque cupiditate? Optio voluptatem alias officiis natus, in libero inventore id! Ab ut fugit consectetur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione rem sint voluptates similique consequuntur quas eaque cupiditate? Optio voluptatem alias officiis natus, in libero inventore id! Ab ut fugit consectetur!</div>
+    </div>
+
+
+
+</body>
+</html>

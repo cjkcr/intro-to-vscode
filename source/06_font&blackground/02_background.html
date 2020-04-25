@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        background-color 设置背景颜色
+        background-image:url() 设置背景图片
+        background-repeat 设置背景重复方式
+            可选值: 
+                repeat 默认值,沿xy轴双方向重复            
+                repeat-x
+                repeat-y
+                no-repeat 不重复
+        background-position 设置图片位置
+            设置方式: 
+                1.top,left,right,bottom,center,需同时指定二个,如指定一个另一个
+                默认为center. 
+                2.指定偏移量来设置
+        background-clip 设置背景范围
+            可选值: 
+                border-box 默认值,背景出现在边框下边
+                padding-box 背景不会出现在边框,只出现在内容区和内边距
+                content-box 背景只会出现在内容区
+        background-size 设置背景图片的大小
+            可选值: 
+                宽高,auto
+                cover 图片比列不变,将元素铺满
+                contain 图片比例不变,将图片在元素中完整显示
+        background-attachment 背景图片是否跟随元素移动
+            可选值: 
+                scroll 默认值,图片跟随元素移动
+                fixed 图片不跟随元系移动
+        background-origin
+         */
+        /*
+        按妞类的制作
+            可以将多个小图统一保存到一个大图片中,然后通过background-position来显示
+            被称为css-sprite,雪碧图
+                1.先确定要使用的图标
+                2.测理图标大小
+                3.根据测量结果创建元素
+                4.设置正确的偏移量以显示图片 
+        */
+        /* 
+        渐变,颜色沿一条直线发生变化 可以指定多个颜色
+            background-image: linear-gradient(red,yellow);
+            可以指定方向
+                to left
+                to right
+                to bottom
+                to top
+                deg 度数
+                turn 圈
+            background-image: linear-gradient(red,yellow);
+         */
+        /* 
+        径向渐变
+        background-image:radial-gradient(100px 100px at top left,red,yellow)
+            正方形-->圆形
+            长方形-->椭圆形
+            也可指定渐变大小
+                circle
+                ellipse
+            也可指定渐变位置    
+
+         
+         
+         
+         
+         
+        */
+        .box1{
+            width: 400px;
+            height: 400px;
+            /* background-image: linear-gradient(red  ,yellow ); */
+            font-size: 100px;
+            font-family:cursive;
+            line-height: 400px;
+            margin: 100px auto;
+            background-image: radial-gradient(100px 100px at bottom right,red,yellow);
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="box1">我来也</div>
+</body>
+
+</html>

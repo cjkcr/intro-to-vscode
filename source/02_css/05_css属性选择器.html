@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        [属性名] 选择含有指定属性的元素
+        [属性名=属性值] 选择含有指定属性值的元素
+        [属性名^=属性值]    选择属性值以指定值开头的元素
+        [属性名$=属性值]    选择属性值以指定值结尾的元素
+        [属性名*=属性值]    选择属性值中含有某值的元素        
+        */
+        div[title=onit]{color: forestgreen;}
+        div[title$=abc]{color: gold;}
+    </style>
+</head>
+<body>
+    <h1 class="abc">回乡诗</h1>
+    <p class="abc blue">少小离家老大回，乡音无改鬓毛衰。</p>
+    <p id='red'>儿童相见不相识，笑问客从何处来</p>    
+    <p class="abc">两相同寅喜协和，此心合处直无阿。</p>
+    <p>广平补衮虽良手，公与弥缝力最多。</p>
+    <br>
+    <h1 class="abc">《和陈正已九日公安道中韵》</h1>
+    <div title="onit">何处山无九日花，</div>
+    <div title="onit">故人相遇即为家。</div>
+    <div title="onit">君方去著风前帽，</div>
+    <div title="onitabc">我已寒如露后葭。<span>注释</span><span>注释</span><span>注释</span><span>注释</span></div>
+    <br>
+    <h1 class="abc">《台山杂吟》</h1>
+    <div>西北天低五顶高，</div>
+    <div>茫茫松海露灵鳌。</div>
+    <div>太行直上犹千里，<em>重要</em><em>考点</em><em>必考</em></div>
+    <div>井底残山枉呼号。<q>注释2</q></div>
+</body>
+</html>

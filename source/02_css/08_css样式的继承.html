@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        样式的继承
+            我们为一个元素设置样式时同进也会应用到它的后代元素上
+            可以方便我们的开发,我们可以将一些通用的样式统一设置到共同的祖先元素上
+            注意:并不是所有的样式都会继承
+                比如 背景相关,布局相关等的样式都不会继承
+        */
+        /* 
+        样式的冲突
+            当我们通过不同的选择器,选中相同的元素,并且为相同的样式设置不同的值时,此时就发生了样式冲突
+            这由选择器的权重决定(优先级)
+            选择器权重:
+                最高权重(可以在某一样式后加 !important)一般不用
+                内联样式
+                id选择器
+                类和伪类选择器
+                元素选择器
+                通配选择器
+                继承的样式
+            比较优先级时,需要将所有的选择器的优先级进行相加计算.
+            分组选择器是单独计算的
+            选择器的累加不会超过其最大的娄量级,类选择器在高也不会超过id选择器
+            如果优先级相同,则优先使用代码中靠下的
+
+        */
+
+
+
+
+        p{color: red;}
+        span{color: springgreen;}
+        #abc{font-size: 50px;}
+
+
+    </style>
+
+
+</head>
+<body>
+    <p>这是一个p元素
+        <span>这是p元素中的span</span>
+    </p>
+
+    <div>这是一个div元素
+        <span id="abc">这是div元素中的span</span>
+    </div>
+</body>
+</html>

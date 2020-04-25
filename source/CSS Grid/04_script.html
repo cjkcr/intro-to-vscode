@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById('box');
+            document.onmousemove = function(move1){
+                var gox = move1.pageX;
+                var goy = move1.pageY;
+                box.style.left = gox + "px";
+                box.style.top = goy + "px";
+            }
+        };
+    </script>
+</head>
+<body>
+
+
+    <div id="box"></div>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东导航条</title>
+    <link rel="stylesheet" href="../03_layout/css/reset.css">
+    <style>
+        .box {
+            /* height: 30px; */
+            background-color: rgba(234, 233, 233, 0.937);
+        }
+
+        nav {
+
+            height: 30px;
+            width: 1200px;
+            font-size: 12px;
+            line-height: 30px;
+            /* color: slategrey; */
+            margin: 0px auto;
+            background-color: rgba(232, 210, 210, 0.937);
+        }
+
+        .map {
+            /* background-color: rgba(234, 233, 233, 0.937); */
+            float: left;
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); */
+        }
+
+        .maptop {
+            padding: 0 10px;
+            /* background-color: rgba(234, 233, 233, 0.937); */
+            /* display: none; */
+            /* margin: 0px 20px; */
+            /* background-color: royalblue; */
+        }
+
+        .maplist {
+            width: 300px;
+            height: 400px;
+            /* background-color: rgba(234, 233, 233, 0.937); */
+            display: none;
+            position: absolute;
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); */
+        }
+
+        .map:hover .map1 {
+            display: block;
+            background-color: whitesmoke;
+            /* background-color: rgba(234, 233, 233, 0.937); */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* .maptop:hover{
+            display: block;
+            background-color: rgba(194, 192, 192, 0.937);
+        } */
+
+        ul {
+            float: right;
+        }
+
+        li {
+            float: left;
+            background-color: rgba(234, 233, 233, 0.937);
+        }
+
+        a {
+            margin-left: 12px;
+            margin-right: 12px;
+            text-decoration: none;
+            color: slategrey;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <nav>
+            <div class="map map1">
+                <div class="maptop map1">内蒙古</div>
+                <div class="maplist map1"></div>
+            </div>
+            <ul class="navigation">
+                <li><a href="javascript:;">你好,请登陆</a></li>
+                <li><a href="javascript:;">免费注册</a>|</li>
+                <li><a href="javascript:;">我的订单</a>|</li>
+                <li><a href="javascript:;">我的京东</a>|</li>
+                <li><a href="javascript:;">京东会员</a>|</li>
+                <li><a href="javascript:;">企业采购</a>|</li>
+                <li><a href="javascript:;">客户服务</a>|</li>
+                <li><a href="javascript:;">网站导航</a>|</li>
+                <li><a href="javascript:;">手机京东</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        长度单位:
+            像素pixel :
+                显示器上的最小结构
+            百分比:
+                可以将属性值设置为相对于其父元素属性的百分比
+                可以使子元素跟随父元素的改变而改变
+            em:
+                是相对于元素的字体大小来计算的
+                1em=1font-size
+                根据字体大小的改变而改变
+            rem:
+                是相对于根元素的字体大小来计算
+        颜色单位:
+            css中可以直接使用颜色名来设置
+                比如:red orange yellow .....
+            RGB值:
+                R red G green B blue
+                每一种颜色范围在0-255(0%-100%)之间
+                语法: rgb(0,0,0)
+            RGBA值: 
+                A 表示不透明度
+        十六进制RGB值: 
+            语法: #红色绿色蓝色
+            浓度通过 00-ff 表示
+        HSL值 HSLA值
+            H hue色相 0-360
+            S saturation饱和度 0%-100%
+            L lightness亮度 0%-100%
+        
+        
+        
+        
+        
+        
+        
+         */
+        .box1{width: 300px; height: 300px; background-color: #ff0000;}
+        .box2{width: 50%; height: 50%; background-color:rgba(20, 50, 100, 0.5);}
+        .box3{width: 10em; height: 10em; background-color: darkslateblue; font-size: 30px;}
+        .box4{width: 200px; height:200px; background-color: rgb(20, 200, 200);}
+        .box4{width: 200px; height:200px; background-color: hsl(100, 50%, 20%);}
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="box1">
+
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

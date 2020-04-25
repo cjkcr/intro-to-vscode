@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        元素选择器
+            作用:根据标签名来选中批定的元素
+            语法:标签名{}
+                p{} h1{}
+        id选择器
+            作用:根据元素的id属性选中一个元素
+            语法:#id属生值{}
+                #red{}
+        类选择器
+            作用:根据元素的class属性值选中一组元素
+            语法:.class属性值
+        通配选择器
+            作用:选中页面中所有元素
+            语法:*
+
+        交集选择器
+            作用:选中同时符合多个条件的元素
+            语法:选择器1选择器2选择器3(p.abc)
+            注意:交集选择器中如果有元素选择器,必须使用元素选择器开头
+        并集选择器(选择器分组)
+            作用:同时选择多个选择器对应的元素
+            语法:选择器1,选择器2,选择器3
+        
+        */
+    p{color: darkgoldenrod;}
+    #red{font-size: 25px;}
+    .abc{color: darkgreen;}
+    *{font-size: 20px;color: darkorange;}
+    p.abc{font-size: 50px;}
+    div,.abc{color: darkred;}
+    </style>
+</head>
+<body>
+    <h1 class="abc">回乡诗</h1>
+    <p class="abc blue">少小离家老大回，乡音无改鬓毛衰。</p>
+    <p id='red'>儿童相见不相识，笑问客从何处来</p>    
+    <p class="abc">两相同寅喜协和，此心合处直无阿。</p>
+    <p>广平补衮虽良手，公与弥缝力最多。</p>
+    <br>
+    <h1 class="abc">《和陈正已九日公安道中韵》</h1>
+    <div>何处山无九日花，</div>
+    <div>故人相遇即为家。</div>
+    <div>君方去著风前帽，</div>
+    <div>我已寒如露后葭。</div>
+    <br>
+    <h1 class="abc">《台山杂吟》</h1>
+    <div>西北天低五顶高，</div>
+    <div>茫茫松海露灵鳌。</div>
+    <div>太行直上犹千里，</div>
+    <div>井底残山枉呼号。</div>
+
+
+
+</body>
+</html>

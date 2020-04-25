@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* CSS单行/多行文本，超出隐藏并显示省略号 */
+
+        .box1 {
+            /*  方法一：使用CSS属性单行文本溢出显示省略号*/
+            width: 200px;
+            /* height: 200px; */
+            background-color: bisque;
+            overflow: hidden;
+            /*  溢出设置 */
+            overflow: auto;
+            text-overflow: ellipsis;
+            /*文本溢出显示省略号*/
+            /* white-space: nowrap; 文本不会换行多行文本溢出显示省略号 */
+            display: -webkit-box;
+            /* 将对象作为弹性伸缩盒子模型显示 */
+            -webkit-box-orient: vertical;
+            /* 设置或检索伸索对象的子元素的排列方式 */
+            -webkit-line-clamp: 4;
+            /* 控制显示行数 */
+            /*  */
+        }
+        .box2::first-line {
+            background-color: rgb(0, 38, 255);
+        }
+        /* 方法二：利用定位和伪类元素适合场景：文字内容较多，确定文字内容一定会超过容器的，那么选择这种方式不错。但文字未超出行的情况下也会出现省略号,可结合js优化该方法。 */
+        .box2 {
+            background-color: cadetblue;
+            position: relative;
+            /* overflow: auto; */
+            overflow: hidden;
+            width: 300px;
+            line-height: 20px;
+            max-height: 60px;
+        }
+        .box2::after {
+            /* ::after 元素的最后 - before 和 after 必须结合content属性来使用  */
+            content: '...';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding-left: 30px;
+            background: -webkit-linear-gradient(left, transparent, #fff 50%);
+            /* background: -o-linear-gradient(right, transparent, #fff 55%); */
+            /* background: -moz-linear-gradient(right, transparent, #fff 55%); */
+            /* background: linear-gradient(to right, transparent, #fff 55%); */
+
+        }
+
+
+        .box2::selection { /*表示选中的内容*/
+            background-color: deeppink;
+        }
+        
+    </style>
+
+    <style>
+        /* user-select设置不能选中文本 
+        user-select属性是css3新增的属性，用于设置用户是否能够选中文本。可用于除替换元素外的所有元素。 */
+        /* 
+        参数：
+        none 文本不能被选择
+        text 可以选择文本
+        all 当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子素向上回溯的最高祖先元素
+        element 可以选择文本，但选择范围受元素边界的约束
+        兼容性代码示例：
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        
+        
+        */
+        /* body {
+            user-select: none;
+        } */
+    </style>
+
+    <style>
+        .box3{
+            width: 200px;
+            border: 1px solid #000;
+            -webkit-box-direction-break:clone ;
+            box-decoration-break: clone;
+        }
+        .box3>span {
+            /* font-size: 40px; */
+            border-radius: 20px;
+            background-color: goldenrod;
+            color: #fff;
+            -webkit-box-direction-break:clone ;
+            box-decoration-break: clone;
+            
+        }
+        
+    </style>
+    <style>
+        /* pointer-events阻止鼠标事件 */
+        /* 
+        pointer-events 更像是JavaScript，它能够：
+        阻止用户的点击动作产生任何效果
+        阻止缺省鼠标指针的显示
+        阻止CSS里的 hover 和 active 状态的变化触发事件
+        阻止JavaScript点击动作触发的事件
+        参数：
+        auto 效果和没有定义pointer-events属性相同，鼠标不会穿透当前层。在SVG中，该值和visiblePainted的效果相同
+        none 元素不再是鼠标事件的目标，鼠标不再监听当前层而去监听下面的层中的元素。但是如果它的子元素设置了pointer-events为其它值，比如auto，鼠标还是会监听这个子元素的
+        */
+
+    </style>
+    <style>
+        /* 改变input光标颜色 */
+        /* 改变input触发后边框颜色 */
+        input{
+            caret-color: orangered;
+            outline-color: rgb(86, 225, 65);
+            outline-width: 10px;
+            outline-offset: 1ex;
+        }
+    </style>
+    <style>
+        /* 不规则投影filter:drop-shadow */
+        /* 
+        根据图片可以明显的看出box-shadow和filter: drop-shadow()的区别：
+        box-shadow会忽视透明部分,而filter: drop-shadow()不会
+        这类情况包括：
+        半透明图像、背景图像、或者 border-image；
+        元素设置了点状，虚线或半透明的边框，但没有背景（或者当 background-clip 不是 border-box时）；
+        对话气泡，它的小尾巴通常是用伪元素生成的；
+        “切角效果”；
+        折角效果；
+        通过clip-path生成的形状。     
+        
+        */
+        img{
+            width: 200px;
+            box-shadow: 4px 4px 4px red;
+            filter: drop-shadow(4px 4px 4px red);
+        }
+        img:hover{
+            content: url('../../source/exercise/Sitting/peep-sitting-10.png');
+        }
+    </style>
+    <style>
+        /* CSS3 mask属性 */
+        /* 
+        注意：
+        mask-image的图片一定要是png图片才看得出效果，两张图片结合会取相交的区域显示
+        mask和background差不多，同样拥有size、repeat、position等属性
+        除了IE不支持外，谷歌、火狐、Edge、Safari、Opera等主流的浏览器都支持该属性。       
+        */
+        .mask {
+            width: 300px;
+            height: 500px;
+            background-image: url('../../source/exercise/background/background_2.png');
+            -webkit-mask-image: url(../../source/exercise/Sitting/peep-sitting-11.png);
+            -webkit-mask-size: 150px ;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position:50% 50%;
+        }
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div>
+        <p class="box1">
+            display: -webkit-box;必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。-webkit-box-orient必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式
+            。使用场景：多用于移动端页面，因为移动设备浏览器更多是基于 WebKit 内核，除了兼容性不好，实现截断的效果不错。
+        </p>
+        <p class="box2">
+            方法二：利用定位和伪类元素适合场景：文字内容较多，确定文字内容一定会超过容器的，那么选择这种方式不错。但文字未超出行的情况下也会出现省略号,可结合js优化该方法。
+        </p>
+    </div>
+    <img src="../../source/exercise/Sitting/peep-sitting-11.png" alt="">
+
+    <div class="box3">
+        <span>不好了，发大财了，花不完啊，太可怜了</span>
+    </div>
+    <input type="text">
+
+
+    <div class="mask">123fdfffffffffffffffffffff</div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!--文档声明,当明版本html5-->
+<!DOCTYPE html>
+<!-- html的根标签(元素),网页中所有的内容都要写在根元素的里边-->
+
+<html lang="en">
+<!--head是网页的头部,head中的内容不会在网页中直接出现,主要用来帮助浏览器或搜索引擎
+来解析网页-->
+<head>
+    <!--meta标签用来充置网页的元数据,这里用来设置网页的字符集等
+    charset 指定网页的字符集
+    name 指定的数据的名称
+        keywords 表示网站的关键字,可以同时指定多个关键字,隔开用逗号.内容可被摸索
+            <meta name="keyword" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+        description 用于指定网站的描述,显示在搜索引擎的结果中
+            <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值… 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+        title 标签的内容会作为摸索结果的超链接上的文字显示
+            <title>淘宝网 - 淘！我喜欢</title>
+        http-equiv='refresh' 用于重定向
+            <meta http-equiv="Refresh" content="5;url=http://www.w3school.com.cn" />
+    content 指定的数据的内容
+    
+    
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Refresh" content="5;url=http://www.w3school.com.cn" />
+    <!--title中的内容会显示在浏览器的标题栏,搜索引擎会主要根据title中的内容来判断网
+        页中的主要内容-->
+    <title>网页的标题</title>
+</head>
+<!--body是html的子元素,表示网页的主体,网页中所有可见内容都写在这里-->
+    
+<body>
+    <!--h1网页的一极标题-->
+    <!--在网页中编写的多个空格会自动解析为一个空格,
+    在html中,我们不能直接书写一些特殊符号,则需要使用实体
+    &实体的名字;
+        &nbsp; 空格
+        &gt; 大于号
+        &lt; 小于号
+        &copy; 版权符号
+
+    -->
+    <h1>网页的大标题</h1>
+    <p>你好,来吧&gt;&gt;</p>
+    <p>将在5秒后重定向至
+        您的 URL 是 <a href="http://www.w3school.com.cn">http://www.w3school.com.cn</a>
+    </p>
+    
+</body>
+</html>

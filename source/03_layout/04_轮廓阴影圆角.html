@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{width: 200px; height: 200px; background-color: cadetblue;}
+        /* 
+        box-shadow 用来设置元素的阴影效果,阴影不会影响页面布局
+            可同时设置4个参数: {box-shadow:10px 20px 10px darkgray;}
+            第一个参数 水平偏移量
+            第二个参数 垂直偏移量
+            第三个参数 阴影的模糊半径
+            第四个参数 阴影的颜色
+        */
+         .box1{
+             box-shadow:10px 20px 10px darkgray;
+         }
+        /* 
+        outline 用来设置元素的轮廓线,用法同border.不同点是轮廓线不会影响盒子的大小
+            参数用来设置颜色,宽度,线条类型
+        
+         */
+        .box1{outline: darkgreen 10px solid;}
+        /* 
+        border-radius 用来设置圆角,还有以下单独设置的commend
+        border-top-left-radius
+        border-top-right-radius
+        border-bottom-left-radius
+        border-bottom-right-radius
+        border-radius:50%; 表示的是一个圆
+         */
+        .box1{
+            border-radius: 20px;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    图片标签用于向当前页面引入一个外部图片:
+        img标签 这是一个自结束标签,属于替换元素(基于块和行内元素之间,具有两种元素的特点)
+            属性:
+                src     属性指定外部图片路径
+                alt     图片的描述,无法加载时显示,搜索时识别用
+                wight   图片宽度(单位像素)
+                height  图片高度
+                        只修改一个,则另一个会等比缩放
+            注意:
+                pc端不建议修改图片大小,需要多大就栽多大
+                移动端,经常需要对图片上缩放(大图缩小)
+            图片格式:
+                jpg     颜色丰富,不支持透明效果,不支持动图,一般用来显示照片
+                gif     颜色较少,支持简单透明,支持动图
+                png     颜色丰富,支持复杂透明,不支持动图(专为网页而生)
+                webp    goole推出网页专用格式,有所有优点,还特别小,但兼容性不好
+                base64  将图片使用base64编码,将图片转为字符,通过字符形式导入图片
+                            这样可以使图片和网页一起加载,src='base64'
+    内联框架标签,用于向当前页面中引入一个其他页面
+        iframe标签 
+            属性:
+                src     指定要引入的网页的路径
+                frameborder   指定是否有边框
+                引入的网页一般不能被爬取
+                可以引入音频视频文件
+    音频文件的引入
+        audio标签 用来向页面引入音频
+            属性:
+                controls 播放控制器
+                autoplay 自动播放
+                loop 循环
+            source标签 嵌套在audio内,由浏览器选择自已支持的源
+                An audio player with two source files. The browser should 
+                    choose which file (if any) it has support for:
+    视频文件的引入
+        video标签 用来向页面引入视频
+            属性:
+                controls 播放控制器
+                autoplay 自动播放
+                loop 循环
+    
+
+
+
+-->
+<img src="./img/1.gif" alt="松鼠">
+<br>
+<audio src="./audios/01.KEROUAC'S DREAM.wav" controls></audio>
+<br>
+<audio controls>
+    <source src="./audios/01 - Beyond - 农民.dff">
+    <source src="./audios/光头李进 - 你在他乡还好吗.ape">
+    <source src="./audios/01.The Beat Hotel.wav">
+</audio>
+<br>
+<img src="https://pic4.zhimg.com/v2-68648c5925b313cc298c78a707d93ca7_1200x500.jpg" alt="阿童木全家福">
+<br>
+<iframe width="400" height="300" src="https://www.youtube.com/embed/KTLE0SpUv9g?list=PLmOn9nNkQxJFs5KfK5ihVgb8nNccfkgxn" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<iframe src="https://www.qq.com" width="600" height="500" frameborder="0"></iframe>   
+</body>
+</html>

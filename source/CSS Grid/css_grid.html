@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+        一.容器里面的水平区域称为"行"（row），垂直区域称为"列"（column）。
+        二.行和列的交叉区域，称为"单元格"（cell）。
+            正常情况下，n行和m列会产生n x m个单元格。比如，3行3列会产生9个单元格。
+        三.网格线
+            划分网格的线，称为"网格线"（grid line）。水平网格线划分出行，垂直网格
+            线划分出列。正常情况下，n行有n + 1根水平网格线，m列有m + 1根垂直网格线，
+            比如三行就有四根水平网格线。
+        四.容器属性
+            Grid 布局的属性分成两类。一类定义在容器上面，称为容器属性；另一类定义在
+            项目上面，称为项目属性。这部分先介绍容器属性。
+            4.1 display 属性
+                display: grid指定一个容器采用网格布局。*/
+        div {display: grid;}
+        .container { display: grid; grid-template-columns: 100px 100px 100px; grid-template-rows: 100px 100px 100px; }
+
+    </style>
+</head>
+
+
+<body>
+    <!-- 
+        采用网格布局的区域，称为"容器"（container）。容器内部采用网格定位的子元素，
+        称为"项目"（item）。 
+        下面代码中，最外层的<div>元素就是容器，内层的三个<div>元素就是项目。
+        注意：项目只能是容器的顶层子元素，不包含项目的子元素，比如上面代码的<p>元素就不是项
+        目。Grid 布局只对项目生效。
+
+    -->
+    <div class="container">
+        <div>
+            <p>1</p>
+        </div>
+        <div>
+            <p>2</p>
+        </div>
+        <div>
+            <p>3</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

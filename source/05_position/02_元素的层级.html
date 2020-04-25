@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        对于兄弟元素来说,开启了定位的元系,可以通过z-index属性来指定元素的层级
+            z-index 需要一个整数作为参数.类似z轴,值越大层级越高
+            如果层级一样,则优先显示靠下的元素.
+        对于父子元素,永远先显示子元素
+        
+        
+        
+         */
+        body{
+            font-size: 20px;
+        }
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            position: absolute;
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(255, 204, 0);
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 1;
+        }
+        .box3{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(0, 145, 255);
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+    
+</body>
+</html>

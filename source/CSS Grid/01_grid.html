@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            display: grid;
+            /* 我们默认想要显示为2列，如果屏幕为 500px的时候我们想让其显示为3列，
+            如果屏幕再大点，我们要 4 列。只需要这样写： */
+            /* grid-template-columns: 1fr 1fr;
+            @media screen and (min-width: 500px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            }
+            @media screen and (min-width: 800px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            } */
+
+
+
+
+            grid-template-columns: 200px auto 200px ;
+            /* grid-template-columns: 500px 800px 1fr ; */
+            grid-template-rows: auto;
+            /* 可以设置行高之间的关系.如果我们把前面的行高设成1fr最后一个则设置为3fr，
+            这意味着第二行的行高是第一行的 3 倍： */
+            grid-column-gap: 1px;
+            /* 用于列的网格线 */
+            grid-row-gap: 1px;
+            /* 用于行的网格线 */
+            background-color: black;
+        }
+        .letter {
+            background-color: #0069b3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 70px;
+            color: white;
+            line-height: 1;
+            font-family: 'hobeaux-rococeaux-background', Helvetica;
+            font-weight: 200;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="letter">
+            A
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            A<br><br><br><br>
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+        <div class="letter">
+            B
+        </div>
+    </div>
+</body>
+</html>

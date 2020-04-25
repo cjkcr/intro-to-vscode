@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        ①.解决兄弟元素高度塌陷
+        如果我们不希望某个元素因为其他元素浮动的影响而改变位置
+            可以通过clear属性来清除浮动元素对当前元素所产生的影响
+        clear
+        可选值: 
+            left 清除左侧浮动元素对当前元素的影响
+            right 清除右侧浮动元素对当前元素的影响
+            both 清除二侧浮动元素最大的对当前元素的影响
+        原理:
+            浏览器会自动为元素添加一个上外边距
+         */
+         /* 
+         ②.解决父子元素高度塌陷
+            1.建立一个空的子元素的兄弟元素,设置为: 
+                clear:both;
+            2.在父元素中建立一个css属性,元素最后之上
+                ::after{
+                    content:'';
+                    display:black;转成块
+                    clear:both;
+                }
+          */
+          /*  
+          ③.终极解决方案,同时解决高度塌陷和外边距重叠的问题,可以直接使用以下代码
+            .clearfix::before,
+            .clearfix::after{
+                content:'';
+                display:table;
+                clear:both;
+            }
+            然后在元素中添加 class='clearfix'属性
+
+
+
+         */
+
+        div{
+            color:rgb(42, 42, 43);
+            font-size: 50px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            background-color: steelblue;
+            float:right
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            clear: both;
+        }
+
+        .box4{
+            border: 10px red solid;
+        }
+        .box5{
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            clear: both;
+        }
+        .box4::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">
+        <div class="box5"></div>
+    </div>
+    
+</body>
+</html>
