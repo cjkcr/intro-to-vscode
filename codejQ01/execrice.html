@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<title>测试</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<style type="text/css">
-	.box,.box1{
-		width: 200px;
-		height: 200px;
-		background-color:gold;
-	}
-	
+		.chart {
+			width: 150px;
+			height: 50px;
+			border: 2px solid #000;
+			text-align: center;
+			line-height: 50px;
+			float: right;
+			margin-right: 150px;
+			margin-top: 30px;
+		}
+		em {
+			font-style: normal;
+			color: red;
+		}
+		.add {
+			width: 80px;
+			height: 40px;
+			background-color: goldenrod;
+			border: 0;
+			margin-top: 300px;
+			margin-left: 300px;
+			color: white;
+			/* border-radius: 50%; */
+			float: left;
+		}
+		.dot {
+			width: 10px;
+			height: 10px;
+			background-color: red;
+			border-radius: 50%;
+			position: fixed;
+			/* top: 0; */
+			/* left: 0; */
+			/* display: none; */
+			z-index: 999;
+		}
 	</style>
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$('#bnt').click(function(){
-				var $box = $('.box');
-				$box.animate({'width':'500px'},1000,function(){
-					$box.animate({'height':'500px'},1000,function(){
-						$box.animate({'opacity':0});
-					})
-				})
-			})
-			$('#bnt1').click(function(){
-				$('.box1').stop().animate({'width':'+=200'});
-			})
-			$('#bnt2').click(function(){
-				$('.box1').stop().animate({'width':'-=100'});
+		$(function () {
+			var $chart = $('.chart');
+			var $count = $('.chart em');
+			var $add = $('.add');
+			var $dot = $('.dot');
+			$add.click(function () {
+				var addpos = $add.offset();
+				var chartpos = $chart.offset();
+				$dot.css({ 'left': addpos.left + 35, 'top': addpos.top + 15 });
+				$dot.show();
+				$dot.stop().animate({ 'left': chartpos.left + 70, 'top': chartpos.top + 20 }, 1000, function () {
+					$dot.hide();
+					var counts = $count.html();
+					$count.html(parseInt(counts) + 1)
+				});
 			})
 		})
-
 	</script>
-	
-
-
-
-
 </head>
 <body>
-	<input type="button" value="动画" id="bnt">
-	<div class="box"></div>
-	
-	<br>
-	<br>
-	<hr>
-	
-	<input type="button" value="长长长" id="bnt1">
-	<input type="button" value="小小小" id="bnt2">
-	<div class="box1"></div>
-   
-   
+	<div class="chart">购物车<em>0</em></div>
+	<input type="button" name="" value="加入购物车" class="add">
+	<div class="dot"></div>
 </body>
 </html>
