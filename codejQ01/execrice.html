@@ -6,67 +6,196 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-	<style type="text/css">
-		.chart {
-			width: 150px;
-			height: 50px;
-			border: 2px solid #000;
-			text-align: center;
-			line-height: 50px;
-			float: right;
-			margin-right: 150px;
-			margin-top: 30px;
-		}
-		em {
-			font-style: normal;
-			color: red;
-		}
-		.add {
-			width: 80px;
-			height: 40px;
-			background-color: goldenrod;
-			border: 0;
-			margin-top: 300px;
-			margin-left: 300px;
-			color: white;
-			/* border-radius: 50%; */
-			float: left;
-		}
-		.dot {
-			width: 10px;
-			height: 10px;
-			background-color: red;
-			border-radius: 50%;
-			position: fixed;
-			/* top: 0; */
-			/* left: 0; */
-			/* display: none; */
-			z-index: 999;
-		}
-	</style>
 	<script type="text/javascript">
-		$(function () {
-			var $chart = $('.chart');
-			var $count = $('.chart em');
-			var $add = $('.add');
-			var $dot = $('.dot');
-			$add.click(function () {
-				var addpos = $add.offset();
-				var chartpos = $chart.offset();
-				$dot.css({ 'left': addpos.left + 35, 'top': addpos.top + 15 });
-				$dot.show();
-				$dot.stop().animate({ 'left': chartpos.left + 70, 'top': chartpos.top + 20 }, 1000, function () {
-					$dot.hide();
-					var counts = $count.html();
-					$count.html(parseInt(counts) + 1)
-				});
+		$(function(){
+			$(window).scroll(function(){
+				var num = $(document).scrollTop();
+				// document.title = num
+				if (num>113)
+				{
+					$('.menu').css({
+						'position':'fixed',
+						'top':0,
+						'left':'50%',
+						'marginLeft':-450,
+					});
+					$('.menu_bak').show();
+
+				}
+				else
+				{
+					$('.menu').css({
+						'position':'static',
+						
+						
+						'marginLeft':'auto'
+						
+					});
+					$('.menu_bak').hide();
+
+				}
+				if (num>500)
+				{
+					$('.gototop').fadeIn();
+				}
+				else
+				{
+					$('.gototop').fadeOut();
+				}
+
+
+
 			})
+			$('.gototop').click(function(){
+				$('html,body').animate({'scrollTop':0})
+
+			})
+
+
 		})
+	
+	
 	</script>
+	
+
+
+	<style type="text/css">
+	.top{
+		width: 900px;
+		height: 100px;
+		background-color: khaki;
+		margin: 0 auto;
+	}
+	.menu{
+		width: 900px;
+		height: 80px;
+		background-color: lightblue;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 80px;
+		/* opacity: 0.3; */
+		
+		
+	}
+	.menu_bak{
+
+		width: 900px;
+		height: 80px;
+		margin: 0 auto;
+		display: none;
+	}
+	.gototop{
+		width: 50px;
+		height: 70px;
+		font-size: 30px;
+		background-color: rgb(212, 223, 202);
+		color:crimson;
+		text-align: center;
+		line-height: 70px;
+		border-radius: 50%;
+		position: fixed;
+		right: 30px;
+		bottom: 30px;
+		/* cursor: pointer; */
+		cursor:grab;
+		display: none;
+
+	}
+	p{
+		text-align: center;
+		color: red;		
+	}
+	</style>
 </head>
 <body>
-	<div class="chart">购物车<em>0</em></div>
-	<input type="button" name="" value="加入购物车" class="add">
-	<div class="dot"></div>
+	<div class="top"></div>
+	<div class="menu">菜单</div>
+	<div class="menu_bak"></div>
+	<div class="gototop">⇪</div>
+	<p>占位子1</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子2</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子3</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+	<p>占位子</p>
+	<br>
+	<br>
+	<br>
+
 </body>
 </html>
