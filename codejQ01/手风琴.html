@@ -39,7 +39,8 @@ body{font-size:12px;}
 
 			$(this).nextAll().each(function(){
 				
-				$(this).animate({left:(727-(5-$(this).index())*21)});				
+				// $(this).animate({left:(727-(5-$(this).index())*21)});				
+				$(this).animate({left:(727-($('#accordion li').length-$(this).index())*21)});				
 			});
 
 

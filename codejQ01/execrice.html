@@ -1,201 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		font-size: 12px;
+	}
+	#accordion{
+		width: 727px;
+		height: 350px;
+		margin: 100px auto ;
+		position: relative;
+		overflow: hidden;
+		border: 1px solid #ccc;
+	}
+	#accordion ul{
+		list-style: none;
+	}
+	#accordion ul li{
+		width: 643px;
+		height: 350px;
+		position: absolute;
+		background-color: #fff;
+	}
+	#accordion ul li span{
+		display: block;
+		width: 20px;
+		height: 350px;
+		float: left;
+		text-align: center;
+		line-height: 58px;
+		color: rgb(3, 3, 31);
+		padding-top: 5px;
+		cursor: pointer;
+	}
+	#accordion ul li img{
+		display: block;
+		float: right;
+	}
+	.bar01{
+		left: 0px;
+	}
+	.bar02{
+		left: 643px;
+	}
+	.bar03{
+		left: 664px;
+	}
+	.bar04{
+		left: 685px;		
+	}
+	.bar05{
+		left: 706px;
+	}
+	.bar01 span{
+		background: #09e0b5;
+	}
+	.bar02 span{
+		background: #e0ae09;
+	}
+	.bar03 span{
+		background: #6084d1;
+	}
+	.bar04 span{
+		background: #60d177;
+	}
+	.bar05 span{
+		/* background: #a5b031; */
+		background-color: blanchedalmond;
+	}	
+	</style>
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$(window).scroll(function(){
-				var num = $(document).scrollTop();
-				// document.title = num
-				if (num>113)
-				{
-					$('.menu').css({
-						'position':'fixed',
-						'top':0,
-						'left':'50%',
-						'marginLeft':-450,
-					});
-					$('.menu_bak').show();
+			var $li = $('#accordion li');
+			$li.click(function(){
+				// alert($(this).html())
+				
 
-				}
-				else
-				{
-					$('.menu').css({
-						'position':'static',
-						
-						
-						'marginLeft':'auto'
-						
-					});
-					$('.menu_bak').hide();
-
-				}
-				if (num>500)
-				{
-					$('.gototop').fadeIn();
-				}
-				else
-				{
-					$('.gototop').fadeOut();
-				}
-
-
-
+				$(this).animate({'left':21*$(this).index()})
+				$(this).prevAll().each(function(){
+					$(this).animate({'left':21*$(this).index()})
+				})
+				$(this).nextAll().each(function(){
+					$(this).animate({'left':727-21*($li.length-$(this).index())})
+				})
 			})
-			$('.gototop').click(function(){
-				$('html,body').animate({'scrollTop':0})
-
-			})
-
-
 		})
-	
-	
+
 	</script>
-	
-
-
-	<style type="text/css">
-	.top{
-		width: 900px;
-		height: 100px;
-		background-color: khaki;
-		margin: 0 auto;
-	}
-	.menu{
-		width: 900px;
-		height: 80px;
-		background-color: lightblue;
-		margin: 0 auto;
-		text-align: center;
-		line-height: 80px;
-		/* opacity: 0.3; */
-		
-		
-	}
-	.menu_bak{
-
-		width: 900px;
-		height: 80px;
-		margin: 0 auto;
-		display: none;
-	}
-	.gototop{
-		width: 50px;
-		height: 70px;
-		font-size: 30px;
-		background-color: rgb(212, 223, 202);
-		color:crimson;
-		text-align: center;
-		line-height: 70px;
-		border-radius: 50%;
-		position: fixed;
-		right: 30px;
-		bottom: 30px;
-		/* cursor: pointer; */
-		cursor:grab;
-		display: none;
-
-	}
-	p{
-		text-align: center;
-		color: red;		
-	}
-	</style>
 </head>
 <body>
-	<div class="top"></div>
-	<div class="menu">菜单</div>
-	<div class="menu_bak"></div>
-	<div class="gototop">⇪</div>
-	<p>占位子1</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子2</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子3</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-	<p>占位子</p>
-	<br>
-	<br>
-	<br>
-
+	<div id="accordion">
+		<ul>
+			<li class="bar01"> <span>非洲景色01</span><img src="images/001.jpg" ></li>
+			<li class="bar02"> <span>非洲景色02</span><img src="images/002.jpg" ></li>
+			<li class="bar03"> <span>非洲景色03</span><img src="images/003.jpg" ></li>
+			<li class="bar04"> <span>非洲景色04</span><img src="images/004.jpg" ></li>
+			<li class="bar05"> <span>非洲景色05</span><img src="images/005.jpg" ></li>
+		</ul>
+	</div>
 </body>
 </html>
